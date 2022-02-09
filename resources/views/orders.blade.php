@@ -6,13 +6,15 @@
 
         <title>Laravel</title>
 
-        <!-- Fonts -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        {{-- <link rel="stylesheet" href="../css/app.css"> --}}
+        <!-- Fonts -->
         {{-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> --}}
     </head>
     <body class="antialiased">
         <section>
           <h2 class="text-blue-400 text-4xl font-semibold">Index</h2>
+          <p>{{ $type }} - {{ $base }} - {{ $price }}</p>
         </section>
     </body>
 </html>
