@@ -23,12 +23,12 @@
                 <div class="container mt-8">
                 
                     <table class="text-left w-full">
-                        <thead class="bg-black flex text-white w-full">
-                            <tr class="flex w-full mb-4">
-                                <th class="p-4 w-1/4">Order</th>
-                                <th class="p-4 w-1/4">Type</th>
-                                <th class="p-4 w-1/4">Base</th>
-                                <th class="p-4 w-1/4">Price</th>
+                        <thead class="bg-gray-900 flex text-white w-full">
+                            <tr class="flex w-full">
+                                <th class="p-4 w-1/4 border-2 border-black">Order</th>
+                                <th class="p-4 w-1/4 border-2 border-black">Type</th>
+                                <th class="p-4 w-1/4 border-2 border-black">Base</th>
+                                <th class="p-4 w-1/4 border-2 border-black">Price</th>
                             </tr>
                         </thead>
                         <tbody class="bg-grey-light flex flex-col items-center overflow-y-auto w-full mb-10">
@@ -38,18 +38,17 @@
                             {{-- <div>
                                 {{ $loop->index }} {{ $order['type'] }} - {{ $order['base'] }}
                             </div> --}}
-                            <tr class="flex w-full mb-4">
-                                <td class="p-4 w-1/4">{{ $loop->index }}</td>
-                                <td class="p-4 w-1/4">{{ $order['type'] }}</td>
-                                <td class="p-4 w-1/4">{{ $order['base'] }}</td>
-                                <td class="p-4 w-1/4">{{ $order['price'] }}</td>
+                            <tr class="flex w-full bg-gray-800">
+                                <td class="p-4 w-1/4 border-2 border-black">{{ $loop->index }}</td>
+                                <td class="p-4 w-1/4 border-2 border-black">{{ $order['type'] }}</td>
+                                <td class="p-4 w-1/4 border-2 border-black">{{ $order['base'] }}</td>
+                                <td class="p-4 w-1/4 border-2 border-black">{{ $order['price'] }}</td>
                             </tr>
                             
                             @endforeach
                         </tbody>
                     </table>
                 </div>
-                
             </div>
         </section>
     </body>
