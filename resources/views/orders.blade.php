@@ -12,20 +12,45 @@
         {{-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> --}}
     </head>
     <body class="antialiased">
-        <section>
-            <h2 class="text-blue-400 text-4xl font-semibold">Index</h2>
-            <p>{{ $type }} - {{ $base }} - {{ $price }}</p>
-            @if ($price > 15)
-                <p>this pizza is expensive</p>
-                @elseif ($price < 5) 
-                <p>this pizza is cheap</p>
-                @else
-                <p>this price is normally priced</p>
-                @endif
+        <section class="orders flex justify-center ">
+            <div class="order-content">
+                <h2 class="text-blue-400 text-4xl font-semibold">Order List</h2>
 
-                @unless ($base == 'cheesy crust')
-                    <p>you don't have a cheesy crust</p>
-                @endunless
+                {{-- @for ($i = 0; $i < count($orders); $i++)
+                    <p>{{ $orders[$i]['type'] }}</p>
+                @endfor --}}
+
+                <div class="container mt-8">
+                
+                    <table class="text-left w-full">
+                        <thead class="bg-black flex text-white w-full">
+                            <tr class="flex w-full mb-4">
+                                <th class="p-4 w-1/4">Order</th>
+                                <th class="p-4 w-1/4">Type</th>
+                                <th class="p-4 w-1/4">Base</th>
+                                <th class="p-4 w-1/4">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-grey-light flex flex-col items-center overflow-y-auto w-full mb-10">
+                            
+                            
+                            @foreach ($orders as $order)
+                            {{-- <div>
+                                {{ $loop->index }} {{ $order['type'] }} - {{ $order['base'] }}
+                            </div> --}}
+                            <tr class="flex w-full mb-4">
+                                <td class="p-4 w-1/4">{{ $loop->index }}</td>
+                                <td class="p-4 w-1/4">{{ $order['type'] }}</td>
+                                <td class="p-4 w-1/4">{{ $order['base'] }}</td>
+                                <td class="p-4 w-1/4">{{ $order['price'] }}</td>
+                            </tr>
+                            
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
         </section>
     </body>
 </html>

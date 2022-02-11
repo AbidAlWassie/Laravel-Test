@@ -20,9 +20,21 @@ Route::get('/', function () {
 Route::get('/orders', function () {
     // get the data from db
     $order = [
-        'type' => 'hawiian',
-        'base' => 'cheesy crust',
-        'price' => 10
+        [
+            'type' => 'hawiian',
+            'base' => 'cheesy crust',
+            'price' => 18
+        ],
+        [
+            'type' => 'volcano',
+            'base' => 'garlic crust',
+            'price' => 10
+        ],
+        [
+            'type' => 'veg suprime',
+            'base' => 'thin & crispy',
+            'price' => 7
+        ],
     ];
-    return view('orders', $order);
+    return view('orders', ['orders' => $order]);
 });
