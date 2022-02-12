@@ -38,3 +38,9 @@ Route::get('/orders', function () {
     ];
     return view('orders', ['orders' => $order]);
 });
+
+
+Route::get('/orders/{id}', function ($id) {
+    // get the data from db
+    return view('details', ['id' => $id]);
+});
