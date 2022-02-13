@@ -17,30 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/orders', function () {
-    // get the data from db
-    $order = [
-        [
-            'type' => 'hawiian',
-            'base' => 'cheesy crust',
-            'price' => 18
-        ],
-        [
-            'type' => 'volcano',
-            'base' => 'garlic crust',
-            'price' => 10
-        ],
-        [
-            'type' => 'veg suprime',
-            'base' => 'thin & crispy',
-            'price' => 7
-        ],
-    ];
-    return view('orders', ['orders' => $order]);
-});
-
-
-Route::get('/orders/{id}', function ($id) {
-    // get the data from db
-    return view('details', ['id' => $id]);
-});
+// Order routes
+Route::get('/orders', 'OrderController@index');
+Route::get('/orders/{id}', 'OrderController@show');
