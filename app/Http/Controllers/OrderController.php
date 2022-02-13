@@ -8,14 +8,26 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders = [
-            ['type' => 'hawaiian', 'base' => 'cheesy crust'],
-            ['type' => 'volcano', 'base' => 'garlic crust'],
-            ['type' => 'veg supreme', 'base' => 'thin & crispy']
+        $order = [
+            [
+                'type' => 'hawiian',
+                'base' => 'cheesy crust',
+                'price' => 18
+            ],
+            [
+                'type' => 'volcano',
+                'base' => 'garlic crust',
+                'price' => 10
+            ],
+            [
+                'type' => 'veg suprime',
+                'base' => 'thin & crispy',
+                'price' => 7
+            ],
         ];
 
         return view('orders', [
-            'orders' => $orders,
+            'orders' => $order,
         ]);
     }
 
