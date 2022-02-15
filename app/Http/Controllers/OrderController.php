@@ -3,31 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Order;
 
 class OrderController extends Controller
 {
     public function index()
     {
-        $order = [
-            [
-                'type' => 'hawiian',
-                'base' => 'cheesy crust',
-                'price' => 18
-            ],
-            [
-                'type' => 'volcano',
-                'base' => 'garlic crust',
-                'price' => 10
-            ],
-            [
-                'type' => 'veg suprime',
-                'base' => 'thin & crispy',
-                'price' => 7
-            ],
-        ];
+
+        $orders = Order::all();
 
         return view('orders', [
-            'orders' => $order,
+            'orders' => $orders,
         ]);
     }
 
