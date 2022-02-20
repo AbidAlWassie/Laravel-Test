@@ -12,13 +12,13 @@ class OrderController extends Controller
 
         $orders = Order::all();
 
-        return view('orders', [
+        return view('orders.orders', [
             'orders' => $orders,
         ]);
     }
 
     public function show($id)
     {
-        return view('details', ['id' => $id]);
+        return view('orders.details', ['id' => $id]);
     }
 }
